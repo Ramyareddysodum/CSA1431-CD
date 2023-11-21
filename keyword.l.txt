@@ -1,0 +1,17 @@
+%{
+#include<stdio.h>
+%}
+%%
+if | else  {printf("it is a keyword");}
+[0-9]+ {printf("it is a digit");}
+[a-z A-Z]+ {printf("It is an alphabet");}
+%%
+int main()
+{
+printf("enter theinput string:");
+yylex();
+}
+int yywrap()
+{
+return 1;
+}
