@@ -1,0 +1,19 @@
+%{
+#include<stdio.h>
+%}
+
+%%
+if|else|int|main|return|while|int|switch|char  {printf("keyword");}
+[a-z]([a-z]|[0-9])*  {printf("identifier");}
+[0-9]*  {printf("number");}
+.*  {printf("invalid");}
+%%
+int main()
+{
+    printf("Enter the input");
+    yylex();
+    return 0; // Add a return statement in the main function
+}
+int yywrap()
+{
+}

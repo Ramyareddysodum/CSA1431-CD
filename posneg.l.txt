@@ -1,0 +1,16 @@
+%{
+#include<stdio.h>
+%}
+%%
+[-][0-9]+ {printf("negative");}
+[0-9]+ {printf("positive");}
+%%
+int main()
+{
+printf("Enter the number");
+yylex();
+}
+int yywrap()
+{
+return 1;
+}
